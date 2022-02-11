@@ -6,7 +6,9 @@ import dynamic from 'next/dynamic';
 import { useState } from 'react';
 
 // import MeuComponente from '../components/meu-componente';
-const MeuComponente = dynamic(() => import('../components/meu-componente'));
+const MeuComponente = dynamic(() => import('../components/meu-componente'), {
+    loading: () => <div>Carregando . . . .</div>,
+});
 
 const Home: NextPage = () => {
     const [isVisible, setVisible] = useState(false);
