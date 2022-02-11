@@ -8,10 +8,11 @@ import { useState } from 'react';
 // import MeuComponente from '../components/meu-componente';
 const MeuComponente = dynamic(() => import('../components/meu-componente'), {
     loading: () => <div>Carregando . . . .</div>,
+    ssr: false,
 });
 
 const Home: NextPage = () => {
-    const [isVisible, setVisible] = useState(false);
+    const [isVisible, setVisible] = useState(true);
     return (
         <div className={styles.container}>
             <button onClick={() => setVisible(!isVisible)}>CLICK</button>
